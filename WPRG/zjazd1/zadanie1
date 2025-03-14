@@ -1,0 +1,28 @@
+*/
+Stwórz tablicę zawierającą nazwy kilku owoców (np. "jabłko", "banan", "pomarańcza"). Napisz
+pętlę, która wyświetli każdy owoc w osobnej linii, pisany od tyłu (nie używaj żadnej funkcji
+wbudowanej) oraz informację, czy dany owoc zaczyna się literą "p".
+*/
+
+<?php
+
+$owoce = ["jabłko", "banan", "pomarańcza", "gruszka", "śliwka"];
+
+foreach ($owoce as $owoc) {
+    $odwrocony = "";
+    $dlugosc = 0;
+    
+    while (isset($owoc[$dlugosc])) {
+        $dlugosc++;
+    }
+    
+    for ($i = $dlugosc - 1; $i >= 0; $i--) {
+        $odwrocony .= $owoc[$i];
+    }
+    
+    $pierwszaLitera = $owoc[0];
+    $czyP = ($pierwszaLitera == 'p') ? "Tak" : "Nie";
+    
+    echo "Oryginalny owoc: $owoc, Odwrocony: $odwrocony, Zaczyna się na 'p'?: $czyP" . PHP_EOL;
+}
+?>
