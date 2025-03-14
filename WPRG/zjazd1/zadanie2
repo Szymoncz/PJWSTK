@@ -1,1 +1,31 @@
+<!--
+Napisz program, który wypisze na ekranie wszystkie liczby pierwsze z zadanego zakresu.
+-->
+<?php
+function czyPierwsza($liczba) {
+    if ($liczba < 2) {
+        return false;
+    }
+    for ($i = 2; $i * $i <= $liczba; $i++) {
+        if ($liczba % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
+function wypiszLiczbyPierwsze($start, $koniec) {
+    echo "Liczby pierwsze w zakresie $start - $koniec: ";
+    for ($i = $start; $i <= $koniec; $i++) {
+        if (czyPierwsza($i)) {
+            echo $i . " ";
+        }
+    }
+    echo PHP_EOL;
+}
+
+$start = 10;
+$koniec = 50;
+wypiszLiczbyPierwsze($start, $koniec);
+
+?>
