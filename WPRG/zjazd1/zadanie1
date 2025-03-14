@@ -1,8 +1,8 @@
-*/
+<!--
 Stwórz tablicę zawierającą nazwy kilku owoców (np. "jabłko", "banan", "pomarańcza"). Napisz
 pętlę, która wyświetli każdy owoc w osobnej linii, pisany od tyłu (nie używaj żadnej funkcji
 wbudowanej) oraz informację, czy dany owoc zaczyna się literą "p".
-*/
+-->
 
 <?php
 
