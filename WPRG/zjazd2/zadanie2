@@ -1,1 +1,45 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo "<h3>Podsumowanie rezerwacji:</h3>";
+    echo "<p>Osoby: " . $_POST['persons'] . "</p>";
+    echo "<p>Imię: " . $_POST['name'] . "</p>";
+    echo "<p>Nazwisko: " . $_POST['surname'] . "</p>";
+    echo "<p>Adres: " . $_POST['address'] . "</p>";
+    echo "<p>Email: " . $_POST['email'] . "</p>";
+    echo "<p>Data pobytu: " . $_POST['date'] . "</p>";
+    echo "<p>Godzina przyjazdu: " . $_POST['time'] . "</p>";
+    echo "<p>Udogodnienia: " . implode(", ", $_POST['amenities'] ?? []) . "</p>";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rezerwacja Hotelu</title>
+</head>
+<body>
+    <h2>Rezerwacja Hotelu</h2>
+    <form method="post">
+        <label>Ilość osób:</label>
+        <select name="persons" id="persons">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select><br>
+        <label>Imię:</label> <input type="text" name="name" required><br>
+        <label>Nazwisko:</label> <input type="text" name="surname" required><br>
+        <label>Adres:</label> <input type="text" name="address" required><br>
+        <label>Email:</label> <input type="email" name="email" required><br>
+        <label>Karta kredytowa:</label> <input type="text" name="credit_card" required><br>
+        <label>Data pobytu:</label> <input type="date" name="date" required><br>
+        <label>Godzina przyjazdu:</label> <input type="time" name="time" required><br>
+        <label>Dostawka dla dziecka:</label> <input type="checkbox" name="extra_bed"><br>
+        <label>Udogodnienia:</label> <br>
+        <input type="checkbox" name="amenities[]" value="Klimatyzacja"> Klimatyzacja<br>
+        <input type="checkbox" name="amenities[]" value="Popielniczka"> Popielniczka dla palacza<br>
+        <button type="submit">Zarezerwuj</button>
+    </form>
+</body>
+</html>
 
